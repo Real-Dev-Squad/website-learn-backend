@@ -1,0 +1,5 @@
+# Env
+GO_ENV = "prod"
+
+#Cors url
+CORS_URL = '/\.realdevsquad\.com/'

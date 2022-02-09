@@ -1,0 +1,8 @@
+# Env
+GO_ENV = "dev"
+
+# Port
+PORT = 5500
+
+#Cors url
+CORS_URL = '/\.realdevsquad\.com/'
