@@ -1,4 +1,4 @@
-package learnSchema
+package resourceSchema
 
 import "time"
 

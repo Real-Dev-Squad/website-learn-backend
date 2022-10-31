@@ -1,4 +1,4 @@
-package learnHandler
+package resourceHandler
 
 import (
 	"log"
