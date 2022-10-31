@@ -9,7 +9,7 @@ import (
 func SetupRoutes(app *fiber.App) {
 
 	HealthRoute(app)
-
+	ResourcesRoute(app)
 	app.Use(handler.NotFound)
 
 }

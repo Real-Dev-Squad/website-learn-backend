@@ -8,12 +8,15 @@ import (
 	"github.com/Real-Dev-Squad/gopher-cloud-service/src/config"
 	"github.com/Real-Dev-Squad/gopher-cloud-service/src/middleware"
 	"github.com/Real-Dev-Squad/gopher-cloud-service/src/routes"
+	errorHandler "github.com/Real-Dev-Squad/gopher-cloud-service/src/utils/errorHandler"
 )
 
 var Config string
 
 func main() {
-	app := fiber.New()
+	app := fiber.New(fiber.Config{
+		ErrorHandler: errorHandler.DefaultErrorHandler,
+	})
 
 	middleware.SetupMiddleware(app)
 
