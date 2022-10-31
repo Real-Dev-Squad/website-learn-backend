@@ -2,7 +2,8 @@ package url
 
 const schema = "https"
 const subdomain = "api-go"
-const secondLevelDomian = "realdevsquad"
+const secondLevelDomain = "realdevsquad"
 const topLevelDomain = "com"
 
-const RdsUrl = schema + "://" + subdomain + "." + secondLevelDomian + "." + topLevelDomain
+// TODO: to change this after discussion with the team
+const RdsUrl = schema + "://" + subdomain + "." + secondLevelDomain + "." + topLevelDomain
