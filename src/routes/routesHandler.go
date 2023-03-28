@@ -6,6 +6,6 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func RouteHandler(router *gin.Engine) {
+func RoutesHandler(router *gin.Engine) {
 	router.GET("/health", handlers.HealthHandler)
 }

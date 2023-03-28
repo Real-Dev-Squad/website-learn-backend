@@ -23,7 +23,7 @@ func Setup() {
 
 	router.Use(cors.New(corsConfig))
 
-	RouteHandler(router)
+	RoutesHandler(router)
 
 	fmt.Println("Server is running on Port:", config.Global.Port)
 	router.Run("localhost:" + strconv.Itoa(config.Global.Port))
