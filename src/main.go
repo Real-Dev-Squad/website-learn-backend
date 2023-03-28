@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"os"
 	"strings"
 
@@ -20,7 +19,6 @@ func main() {
 	}
 
 	config.Setup(env)
-	fmt.Println("config in main", config.Global)
 
 	routes.Setup()
 }
