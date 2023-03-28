@@ -9,6 +9,7 @@ import (
 var Global config
 
 type config struct {
+	Env           string `mapstructure:"GO_ENV"`
 	Port          int    `mapstructure:"PORT"`
 	FirestoreCred string `mapstructure:"FIRESTORE_CREDENTIALS"`
 	CorsUrl       string `mapstructure:"CORS_URL"`

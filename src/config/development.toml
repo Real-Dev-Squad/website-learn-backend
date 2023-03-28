@@ -1,2 +1,5 @@
+# env
+GO_ENV = "dev"
+
 # Port
 PORT = 8000

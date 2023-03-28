@@ -1,6 +1,7 @@
 package routes
 
 import (
+	"fmt"
 	"strconv"
 
 	"github.com/gin-contrib/cors"
@@ -10,6 +11,11 @@ import (
 )
 
 func Setup() {
+
+	if config.Global.Env == "prod" {
+		gin.SetMode(gin.ReleaseMode)
+	}
+
 	router := gin.Default()
 	corsConfig := cors.DefaultConfig()
 	corsConfig.AllowOrigins = []string{config.Global.CorsUrl}
@@ -18,5 +24,6 @@ func Setup() {
 
 	RouteHandler(router)
 
+	fmt.Println("Server is running on Port:", config.Global.Port)
 	router.Run("localhost:" + strconv.Itoa(config.Global.Port))
 }

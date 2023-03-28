@@ -1,3 +1,6 @@
+# env
+GO_ENV = "default"
+
 # Port
 PORT = 5500
 
