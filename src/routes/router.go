@@ -17,6 +17,7 @@ func Setup() {
 	}
 
 	router := gin.Default()
+
 	corsConfig := cors.DefaultConfig()
 	corsConfig.AllowOrigins = []string{config.Global.CorsUrl}
 
