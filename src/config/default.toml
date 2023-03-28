@@ -16,4 +16,4 @@ FIRESTORE_CREDENTIALS = '''{
 }'''
 
 #Cors url
-CORS_URL = 'https://([a-zA-z0-9-_]+.)?realdevsquad.com/'
+CORS_URL = 'https://realdevsquad.com/'

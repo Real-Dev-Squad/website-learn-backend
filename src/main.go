@@ -1,14 +1,12 @@
 package main
 
 import (
+	"fmt"
 	"os"
-	"strconv"
 	"strings"
 
 	"github.com/Real-Dev-Squad/gopher-cloud-service/src/config"
-	"github.com/Real-Dev-Squad/gopher-cloud-service/src/handlers"
-	"github.com/gin-contrib/cors"
-	"github.com/gin-gonic/gin"
+	"github.com/Real-Dev-Squad/gopher-cloud-service/src/routes"
 )
 
 func main() {
@@ -22,14 +20,7 @@ func main() {
 	}
 
 	config.Setup(env)
+	fmt.Println("config in main", config.Global)
 
-	router := gin.Default()
-
-	corsConfig := cors.DefaultConfig()
-	corsConfig.AllowOrigins = []string{config.Global.CorsUrl}
-
-	router.Use(cors.New(corsConfig))
-
-	router.GET("/health", handlers.HealthHandler)
-	router.Run("localhost:" + strconv.Itoa(config.Global.Port))
+	routes.Setup()
 }

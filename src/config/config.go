@@ -30,7 +30,7 @@ func getConfigFile(env string) string {
 func loadConfig(env string) (config config, err error) {
 	var configFile = getConfigFile(env)
 
-	viper.AddConfigPath("config")
+	viper.AddConfigPath("src/config")
 
 	viper.SetConfigName("default")
 	viper.ReadInConfig()
