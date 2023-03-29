@@ -8,4 +8,5 @@ import (
 
 func RoutesHandler(router *gin.Engine) {
 	router.GET("/health", handlers.HealthHandler)
+	router.GET("/health/dashboard", handlers.Dashboard)
 }
