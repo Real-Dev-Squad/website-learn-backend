@@ -7,5 +7,10 @@ import (
 )
 
 func Dashboard(c *gin.Context) {
-	c.IndentedJSON(http.StatusOK, gin.H{"message": "you reached the dashboard"})
+	isUserAuthenticated, _ := c.Get("Authenticated")
+	if isUserAuthenticated == true {
+		c.IndentedJSON(http.StatusOK, gin.H{"message": "you reached the dashboard"})
+	} else {
+		c.IndentedJSON(http.StatusUnauthorized, gin.H{"message": "User not authenticated"})
+	}
 }

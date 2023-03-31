@@ -3,3 +3,6 @@ GO_ENV = "dev"
 
 # Port
 PORT = 8000
+
+# Cookie Name
+COOKIE_NAME = "rds-session-development"

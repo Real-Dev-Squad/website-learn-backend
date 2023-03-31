@@ -1,2 +1,5 @@
 # env
 GO_ENV = "prod"
+
+# Cookie Name
+COOKIE_NAME = "rds-session"

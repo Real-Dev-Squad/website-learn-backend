@@ -4,6 +4,9 @@ GO_ENV = "default"
 # Port
 PORT = 5500
 
+# Cookie Name
+COOKIE_NAME = ""
+
 # Firestore credentials
 FIRESTORE_CREDENTIALS = '''{
   "type": "default",
