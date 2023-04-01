@@ -24,18 +24,16 @@ func Auth() gin.HandlerFunc {
 				cookie = reqCookie.Value
 			}
 
-			decodedJWT, err := jwt.DecodeSegment(cookie)
+			decodedJWT, _, err := new(jwt.Parser).ParseUnverified(cookie, jwt.MapClaims{})
 
 			if err != nil {
 				log.Println("An unexpected error occured", err)
 			}
 
-			if 1 > 2 {
-				log.Println(string(decodedJWT))
+			if claims, ok := decodedJWT.Claims.(jwt.MapClaims); ok {
+				userId := claims["userId"]
+				c.Set("userId", userId)
 				c.Set("Authenticated", true)
-			} else {
-				log.Println(string(decodedJWT))
-				c.Set("Authenticated", false)
 			}
 		}
 	}
