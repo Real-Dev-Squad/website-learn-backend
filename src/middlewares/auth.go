@@ -22,6 +22,7 @@ func Auth() gin.HandlerFunc {
 				cookie = ""
 			} else {
 				cookie = reqCookie.Value
+				log.Println(ValidateJWT(cookie))
 			}
 
 			decodedJWT, _, err := new(jwt.Parser).ParseUnverified(cookie, jwt.MapClaims{})
