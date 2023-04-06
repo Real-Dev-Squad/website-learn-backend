@@ -15,5 +15,5 @@ go run ./src/main.go
 To run the tests use the command
 
 ```sh
-go test ./src/test
+go test ./src/tests
 ```
