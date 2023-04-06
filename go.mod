@@ -34,3 +34,7 @@ require (
 	google.golang.org/protobuf v1.28.1 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
+
+replace github.com/Real-Dev-Squad/gopher-cloud-service/src/routes => ./src/routes
+
+replace github.com/Real-Dev-Squad/gopher-cloud-service/src/controllers => ./src/controllers
