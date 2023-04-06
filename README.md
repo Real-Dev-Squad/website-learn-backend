@@ -4,7 +4,7 @@ A backend written in go lang
 
 We use the `GIN` Package to create the APIs
 
-To have a look at api specifications go here: [`/apiContracts`]("./apiContracts")
+To have a look at api specifications go here: [`/apiContracts`](/apiContracts)
 
 To run the backend use the command
 
