@@ -8,7 +8,7 @@ import (
 	"testing"
 
 	"github.com/Real-Dev-Squad/gopher-cloud-service/src/routes"
-	"github.com/Real-Dev-Squad/gopher-cloud-service/src/tests/fixtures"
+	"github.com/Real-Dev-Squad/gopher-cloud-service/src/test/fixtures"
 
 	"github.com/stretchr/testify/assert"
 )
