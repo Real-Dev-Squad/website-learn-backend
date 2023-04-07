@@ -2,6 +2,7 @@ package main
 
 import (
 	"log"
+	"os"
 	"strconv"
 
 	"github.com/Real-Dev-Squad/gopher-cloud-service/src/config"
@@ -9,7 +10,10 @@ import (
 )
 
 func main() {
-	config.Setup("")
+
+	env, _ := os.LookupEnv("env")
+
+	config.Setup(env)
 	port := strconv.Itoa(config.Global.Port)
 	version := strconv.Itoa(config.Global.Version)
 
