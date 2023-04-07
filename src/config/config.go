@@ -40,6 +40,8 @@ func loadConfig(env string) (config config, err error) {
 	viper.SetConfigName(configFile)
 	viper.MergeInConfig()
 
+	viper.AutomaticEnv()
+
 	err = viper.Unmarshal(&config)
 	return
 }
