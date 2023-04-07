@@ -1,0 +1,3 @@
+GO_ENV="prod"
+
+PORT = 3000
