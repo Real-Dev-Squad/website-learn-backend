@@ -15,9 +15,8 @@ func main() {
 
 	config.Setup(env)
 	port := strconv.Itoa(config.Global.Port)
-	version := strconv.Itoa(config.Global.Version)
 
 	router := routes.SetupRouter(config.Global.Env)
-	log.Printf("Server is running on http://localhost:%v/v%v/\n", port, version)
+	log.Printf("Server is running on http://localhost:%v/\n", port)
 	router.Run("localhost:" + port)
 }
