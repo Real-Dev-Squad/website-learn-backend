@@ -16,5 +16,5 @@ func TestSetup() {
 	config.Setup("test")
 	Version = strconv.Itoa(config.Global.Version)
 	Ver = "/v" + Version
-	Router = routes.SetupRouter(config.Global.Env, Version)
+	Router = routes.SetupRouter(config.Global.Env)
 }
