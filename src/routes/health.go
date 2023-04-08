@@ -6,5 +6,5 @@ import (
 )
 
 func HealthRoutes(router *gin.RouterGroup) {
-	router.GET("/", controllers.Health)
+	router.GET("", controllers.Health)
 }
