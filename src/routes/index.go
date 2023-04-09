@@ -11,10 +11,6 @@ import (
 func UseRoutes(router *gin.Engine) {
 	ver := "/v" + strconv.Itoa(config.Global.Version)
 	indexGroup := router.Group(ver)
-	{
-		healthGroup := indexGroup.Group("/health")
-		{
-			HealthRoutes(healthGroup)
-		}
-	}
+	healthGroup := indexGroup.Group("/health")
+	HealthRoutes(healthGroup)
 }
