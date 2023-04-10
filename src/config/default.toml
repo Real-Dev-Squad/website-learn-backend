@@ -1,0 +1,27 @@
+GO_ENV = "default"
+
+# Port
+PORT = 5500
+
+# Version
+VERSION = 1
+
+# Cookie Name
+COOKIE_NAME = ""
+
+# Firestore credentials
+FIRESTORE_CREDENTIALS = '''{
+  "type": "default",
+  "project_id": "",
+  "private_key_id": "",
+  "private_key": "",
+  "client_email": "",
+  "client_id": "",
+  "auth_uri": "",
+  "token_uri": ":"",
+  "auth_provider_x509_cert_url":"",
+  "client_x509_cert_url":""
+}'''
+
+#Cors url
+CORS_URL = 'https://realdevsquad.com/'

@@ -1,0 +1,3 @@
+GO_ENV = "test"
+
+PORT = 8000
