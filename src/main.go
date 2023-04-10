@@ -7,6 +7,7 @@ import (
 
 	"github.com/Real-Dev-Squad/gopher-cloud-service/src/config"
 	"github.com/Real-Dev-Squad/gopher-cloud-service/src/routes"
+	"github.com/Real-Dev-Squad/gopher-cloud-service/src/utils"
 )
 
 func main() {
@@ -16,7 +17,15 @@ func main() {
 	config.Setup(env)
 	port := strconv.Itoa(config.Global.Port)
 
-	router := routes.SetupRouter(config.Global.Env)
-	log.Printf("Server is running on http://localhost:%v/\n", port)
-	router.Run("localhost:" + port)
+	args := os.Args
+	if len(args) > 1 {
+		requiredArg := args[1]
+		if requiredArg == "validate" {
+			utils.ValidateSetup()
+		}
+	} else {
+		router := routes.SetupRouter(config.Global.Env)
+		log.Printf("Server is running on http://localhost:%v/\n", port)
+		router.Run("localhost:" + port)
+	}
 }
