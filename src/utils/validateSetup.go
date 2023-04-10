@@ -10,8 +10,7 @@ import (
 
 func ValidateSetup() {
 
-	client := models.CreateFirestoreClient(context.Background())
-	testModel := client.Collection("test")
+	testModel := models.GetCollection("test")
 
 	data := map[string]interface{}{"Name": "test"}
 

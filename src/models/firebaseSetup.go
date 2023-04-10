@@ -19,11 +19,17 @@ func createFirebaseApp(ctx context.Context) *firebase.App {
 	return app
 }
 
-func CreateFirestoreClient(ctx context.Context) *firestore.Client {
+func createFirestoreClient(ctx context.Context) *firestore.Client {
 	app := createFirebaseApp(ctx)
 	client, err := app.Firestore(ctx)
 	if err != nil {
 		log.Fatal(err)
 	}
 	return client
+}
+
+func GetCollection(name string) *firestore.CollectionRef {
+	client := createFirestoreClient(context.Background())
+	model := client.Collection(name)
+	return model
 }
