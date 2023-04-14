@@ -12,9 +12,10 @@ type config struct {
 	Env           string `mapstructure:"GO_ENV"`
 	Version       int    `mapstructure:"VERSION"`
 	Port          int    `mapstructure:"PORT"`
-	Cookie        string `mapstructure:"COOKIE_NAME"`
+	CookieName    string `mapstructure:"COOKIE_NAME"`
 	FirestoreCred string `mapstructure:"FIRESTORE_CREDENTIALS"`
 	CorsUrl       string `mapstructure:"CORS_URL"`
+	PublicKey     string `mapstructure:"PUBLIC_KEY"`
 }
 
 var environmentToFileMaps = map[string]string{
@@ -32,7 +33,11 @@ func getConfigFile(env string) string {
 func loadConfig(env string) (config config, err error) {
 	var configFile = getConfigFile(env)
 
-	viper.AddConfigPath("src/config")
+	if env == "test" {
+		viper.AddConfigPath("../config")
+	} else {
+		viper.AddConfigPath("src/config")
+	}
 
 	viper.SetConfigName("default")
 	viper.ReadInConfig()

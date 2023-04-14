@@ -23,5 +23,7 @@ FIRESTORE_CREDENTIALS = '''{
   "client_x509_cert_url":""
 }'''
 
+PUBLIC_KEY = ""
+
 #Cors url
 CORS_URL = 'https://realdevsquad.com/'
