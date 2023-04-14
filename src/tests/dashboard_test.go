@@ -36,6 +36,7 @@ func TestHealthDashboardAuthenticated(t *testing.T) {
 	Router.ServeHTTP(w, req)
 
 	assert.Equal(t, http.StatusOK, w.Code)
+	assert.JSONEq(t, fixtures.Authorized(), w.Body.String())
 }
 
 func init() {
