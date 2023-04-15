@@ -6,13 +6,6 @@ func SendCookie() string {
 	return cookie
 }
 
-func Unauthorized() string {
-	unauthorized := `{
-		"message": "unauthenticated user"
-	}`
-	return unauthorized
-}
-
 func Authorized() string {
 	authorized := `{
 		"message": "Welcome to the authenticated route",
