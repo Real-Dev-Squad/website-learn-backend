@@ -25,7 +25,7 @@ All routes will include `/v1` as a prefix.
 404 Page Not Found
 ```
 
-### Route: `health/dashboard`
+### Route: `/health/dashboard`
 
 The `/health/dashboard` endpoint is an authenticated route that returns a welcome message and the user ID of the logged-in user.
 If the user is not authenticated, a 401 error response will be returned with a message indicating that the user is unauthenticated.
