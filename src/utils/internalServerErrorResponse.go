@@ -7,6 +7,6 @@ import (
 )
 
 func InternalServerErrorResponse(context *gin.Context) {
-	context.IndentedJSON(http.StatusInternalServerError, gin.H{"message": "An internal server error occurred"})
+	context.JSON(http.StatusInternalServerError, gin.H{"message": "An internal server error occurred"})
 	context.Abort()
 }
