@@ -7,6 +7,6 @@ import (
 )
 
 func UnauthorizedResponse(context *gin.Context) {
-	context.IndentedJSON(http.StatusUnauthorized, gin.H{"message": "unauthenticated user"})
+	context.JSON(http.StatusUnauthorized, gin.H{"message": "unauthenticated user"})
 	context.Abort()
 }
