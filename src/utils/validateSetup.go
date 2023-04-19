@@ -4,7 +4,7 @@ import (
 	"context"
 	"log"
 
-	"github.com/Real-Dev-Squad/gopher-cloud-service/src/models"
+	"github.com/Real-Dev-Squad/website-learn-backend/src/models"
 	"google.golang.org/api/iterator"
 )
 

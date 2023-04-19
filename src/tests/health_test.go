@@ -5,7 +5,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/Real-Dev-Squad/gopher-cloud-service/src/tests/fixtures"
+	"github.com/Real-Dev-Squad/website-learn-backend/src/tests/fixtures"
 
 	"github.com/stretchr/testify/assert"
 )

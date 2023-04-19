@@ -1,8 +1,8 @@
 package routes
 
 import (
-	"github.com/Real-Dev-Squad/gopher-cloud-service/src/controllers"
-	"github.com/Real-Dev-Squad/gopher-cloud-service/src/middleware"
+	"github.com/Real-Dev-Squad/website-learn-backend/src/controllers"
+	"github.com/Real-Dev-Squad/website-learn-backend/src/middleware"
 	"github.com/gin-gonic/gin"
 )
 

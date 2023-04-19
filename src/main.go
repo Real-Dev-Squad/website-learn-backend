@@ -5,9 +5,9 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/Real-Dev-Squad/gopher-cloud-service/src/config"
-	"github.com/Real-Dev-Squad/gopher-cloud-service/src/routes"
-	"github.com/Real-Dev-Squad/gopher-cloud-service/src/utils"
+	"github.com/Real-Dev-Squad/website-learn-backend/src/config"
+	"github.com/Real-Dev-Squad/website-learn-backend/src/routes"
+	"github.com/Real-Dev-Squad/website-learn-backend/src/utils"
 )
 
 func main() {
