@@ -7,5 +7,5 @@ import (
 )
 
 func Health(context *gin.Context) {
-	context.IndentedJSON(http.StatusOK, gin.H{"message": "server is up and running"})
+	context.JSON(http.StatusOK, gin.H{"message": "server is up and running"})
 }

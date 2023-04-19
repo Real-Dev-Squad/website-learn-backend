@@ -5,20 +5,27 @@ import (
 	"os"
 	"strconv"
 
+	"github.com/Real-Dev-Squad/gopher-cloud-service/src/config"
 	"github.com/Real-Dev-Squad/gopher-cloud-service/src/routes"
+	"github.com/Real-Dev-Squad/gopher-cloud-service/src/utils"
 )
 
 func main() {
-	value, keyExists := os.LookupEnv("env")
-	port := strconv.Itoa(8000)
-	version := strconv.Itoa(1)
-	if keyExists {
-		log.Printf("Running in %v mode\n", value)
+
+	env, _ := os.LookupEnv("env")
+
+	config.Setup(env)
+	port := strconv.Itoa(config.Global.Port)
+
+	args := os.Args
+	if len(args) > 1 {
+		requiredArg := args[1]
+		if requiredArg == "validate" {
+			utils.ValidateSetup()
+		}
 	} else {
-		log.Printf("Running in local dev mode\n")
-		value = "local"
+		router := routes.SetupRouter(config.Global.Env)
+		log.Printf("Server is running on http://localhost:%v/\n", port)
+		router.Run("localhost:" + port)
 	}
-	router := routes.SetupRouter(value, version)
-	log.Printf("Server is running on http://localhost:%v\n", port)
-	router.Run("localhost:" + port)
 }
