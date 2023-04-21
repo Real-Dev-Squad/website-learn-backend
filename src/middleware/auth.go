@@ -1,8 +1,11 @@
 package middleware
 
 import (
-	"github.com/Real-Dev-Squad/gopher-cloud-service/src/config"
-	"github.com/Real-Dev-Squad/gopher-cloud-service/src/utils"
+	"fmt"
+	"log"
+
+	"github.com/Real-Dev-Squad/website-learn-backend/src/config"
+	"github.com/Real-Dev-Squad/website-learn-backend/src/utils"
 	jwt "github.com/dgrijalva/jwt-go"
 
 	"github.com/gin-gonic/gin"

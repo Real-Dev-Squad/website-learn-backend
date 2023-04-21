@@ -3,8 +3,8 @@ package tests
 import (
 	"strconv"
 
-	"github.com/Real-Dev-Squad/gopher-cloud-service/src/config"
-	"github.com/Real-Dev-Squad/gopher-cloud-service/src/routes"
+	"github.com/Real-Dev-Squad/website-learn-backend/src/config"
+	"github.com/Real-Dev-Squad/website-learn-backend/src/routes"
 	"github.com/gin-gonic/gin"
 )
 

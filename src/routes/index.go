@@ -5,7 +5,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	"github.com/Real-Dev-Squad/gopher-cloud-service/src/config"
+	"github.com/Real-Dev-Squad/website-learn-backend/src/config"
 )
 
 func UseRoutes(router *gin.Engine) {

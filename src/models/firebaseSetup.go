@@ -6,7 +6,7 @@ import (
 
 	"cloud.google.com/go/firestore"
 	firebase "firebase.google.com/go"
-	"github.com/Real-Dev-Squad/gopher-cloud-service/src/config"
+	"github.com/Real-Dev-Squad/website-learn-backend/src/config"
 	"google.golang.org/api/option"
 )
 
