@@ -1,9 +1,6 @@
 package middleware
 
 import (
-	"fmt"
-	"log"
-
 	"github.com/Real-Dev-Squad/gopher-cloud-service/src/config"
 	"github.com/Real-Dev-Squad/gopher-cloud-service/src/utils"
 	jwt "github.com/dgrijalva/jwt-go"
@@ -11,55 +8,56 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func verifyUser(context *gin.Context) (bool, bool, error) {
+type verifyResponse struct {
+	authenticatedUser   bool
+	internalServerError bool
+}
 
-	authenticatedUser := false
-	internalServerError := false
+func verifyUser(context *gin.Context) (response verifyResponse) {
 
 	cookie, err := context.Cookie(config.Global.CookieName)
 	if err != nil {
-		return authenticatedUser, internalServerError, err
+		return
 	}
 
 	key, err := jwt.ParseRSAPublicKeyFromPEM([]byte(config.Global.PublicKey))
 	if err != nil {
-		internalServerError = true
-		return authenticatedUser, internalServerError, err
+		response.internalServerError = true
+		return
 	}
 
 	token, err := jwt.Parse(cookie, func(token *jwt.Token) (interface{}, error) { return key, nil })
 	if err != nil {
-		return authenticatedUser, internalServerError, err
+		return
 	}
 	if !token.Valid {
-		return authenticatedUser, internalServerError, fmt.Errorf("Invalid Token")
+		return
 	}
 
 	parsedJWT, _, err := new(jwt.Parser).ParseUnverified(cookie, jwt.MapClaims{})
 	if err != nil {
-		return authenticatedUser, internalServerError, err
+		return
 	}
 
 	claims, ok := parsedJWT.Claims.(jwt.MapClaims)
 
 	if !ok {
-		return authenticatedUser, internalServerError, err
+		return
 	}
 
 	context.Set("userId", claims["userId"])
 
-	authenticatedUser = true
-	return authenticatedUser, internalServerError, err
+	response.authenticatedUser = true
+	return
 }
 
 func Authenticate(context *gin.Context) {
-	authenticatedUser, internalServerError, err := verifyUser(context)
-	if err != nil {
-		log.Println("Some Error occured")
-	}
-	if internalServerError {
+
+	response := verifyUser(context)
+
+	if response.internalServerError {
 		utils.InternalServerErrorResponse(context)
-	} else if !authenticatedUser {
+	} else if !response.authenticatedUser {
 		utils.UnauthorizedResponse(context)
 	} else {
 		context.Next()
