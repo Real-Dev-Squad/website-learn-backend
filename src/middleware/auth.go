@@ -1,9 +1,6 @@
 package middleware
 
 import (
-	"fmt"
-	"log"
-
 	"github.com/Real-Dev-Squad/website-learn-backend/src/config"
 	"github.com/Real-Dev-Squad/website-learn-backend/src/utils"
 	jwt "github.com/dgrijalva/jwt-go"
